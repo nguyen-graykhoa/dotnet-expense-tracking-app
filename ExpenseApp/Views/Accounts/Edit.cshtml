@@ -1,0 +1,59 @@
+﻿@model ExpenseApp.Models.Account
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CurrencyType" class="control-label"></label>
+                <input asp-for="CurrencyType" class="form-control" />
+                <span asp-validation-for="CurrencyType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Depositer" class="control-label"></label>
+                <input asp-for="Depositer" class="form-control" />
+                <span asp-validation-for="Depositer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Receiver" class="control-label"></label>
+                <input asp-for="Receiver" class="form-control" />
+                <span asp-validation-for="Receiver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionDate" class="control-label"></label>
+                <input asp-for="TransactionDate" class="form-control" />
+                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionType" class="control-label"></label>
+                <input asp-for="TransactionType" class="form-control" />
+                <span asp-validation-for="TransactionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionDescription" class="control-label"></label>
+                <input asp-for="TransactionDescription" class="form-control" />
+                <span asp-validation-for="TransactionDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
